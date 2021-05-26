@@ -34,7 +34,7 @@ If you want to use this file, make sure your `*.ovpn` config file contains follo
 auth-user-pass credentials.conf
 ```
 
-The file should content user and password per separate line.
+The file should contain user and password per separate line.
 ```text
 username
 password
