@@ -1,11 +1,15 @@
-#!/bin/bash
+#!/bin/sh
+
+touch "$(realpath "credentials.conf")"
 
 exec docker run \
     --rm \
     --tty \
     --interactive \
+    --name openvpn-client-socks \
     --device=/dev/net/tun \
     --cap-add=NET_ADMIN \
-    --publish 127.0.0.1:1081:1080 \
+    --publish 1081:1080 \
     --volume "$(realpath "$1"):/ovpn.conf:ro" \
-    mook/openvpn-client-socks:${TAG:-latest}
+    --volume "$(realpath "credentials.conf"):/credentials.conf:ro" \
+    "mook/openvpn-client-socks:${TAG:-latest}"
