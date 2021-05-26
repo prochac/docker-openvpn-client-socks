@@ -6,9 +6,9 @@ routing).
 
 ## Usage
 
-Preferably, using `start` in this repository:
+Preferably, using `start` script in this repository:
 ```bash
-start client_config.ovpn
+./start client_config.ovpn
 ```
 
 Alternatively, using `docker run` directly:
